@@ -19,8 +19,6 @@
 
 [Demo](#Demo)
 
-![none](none)
-
 
 ## Technologies Used:
 
@@ -33,6 +31,10 @@
 ## How-to-install:
 
 - To install the necessary depenencies, run the following command npm install or npm i
+
+## Demo
+
+![A live demo](./readmegen.gif)
 
 ## Report-issues:
 

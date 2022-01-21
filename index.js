@@ -45,7 +45,7 @@ const questions = () => {
         },
         {
             type: "input",
-            message: "What is the link to your GitHub?",
+            message: "What is your github username?",
             name: "github"
         },
         {
@@ -83,7 +83,7 @@ const generateReadme = ({
 
 - ${description}
 
-### Table of Contents  
+#### Table of Contents  
 [Technologies used](#technologies)
 
 [How to use](#How-to-use)
@@ -95,11 +95,6 @@ const generateReadme = ({
 [How to Contribute](#Contribute)
 
 [Demo](#Demo)
-
-##Product Demo:
-
-![${demo}](${demo})
-
 
 ## Technologies Used:
 
@@ -113,10 +108,14 @@ const generateReadme = ({
 
 - To install the necessary depenencies, run the following command in the integrated terminal ${howToInstall}
 
+## Demo
+
+![${demo}](${demo})
+
 ## Report-issues:
 
 * [${email}](${email})
-* [${github}](${github})
+* [${github}](https://github.com/${github})
 * ${report}
 
 ## Contribute:
