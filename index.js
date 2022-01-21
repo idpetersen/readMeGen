@@ -1,6 +1,7 @@
+//importing inquirer and fileSystem
 const inquirer = require('inquirer');
 const fs = require('fs');
-
+//Setting a variable to collect user data using inquirer
 const questions = () => {
     return inquirer.prompt([{
             type: "input",
@@ -9,33 +10,32 @@ const questions = () => {
         },
         {
             type: "input",
-            message: "Give a short description of your project",
+            message: "Please give a short description of your project",
             name: "description",
         },
         {
             type: "input",
-            message: "How to use the app:",
+            message: "Please give a short discription on how to use your application",
             name: "howToUse"
         },
         {
             type: "input",
-            message: "How to install:",
+            message: "What command should be run to install dependencies?",
             name: "howToInstall"
         },
         {
-            type: "checkbox",
+            type: "input",
             message: "What technologies were used?",
-            choices: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Express.js', 'React.js', 'Node.js', 'MongoDB', 'MySQL', 'Git'],
             name: "technologies"
         },
         {
             type: "input",
-            message: "How to report issues:",
+            message: "Please write a brief way to report issues about the repo",
             name: "report"
         },
         {
             type: "input",
-            message: "How to contribute:",
+            message: "Please write a brief way to contribute to the repo",
             name: "contribute"
         },
         {
@@ -45,12 +45,22 @@ const questions = () => {
         },
         {
             type: "input",
-            message: "What is your GitHub?",
+            message: "What is the link to your GitHub?",
             name: "github"
+        },
+        {
+            type: "input",
+            message: "What kind of license should your project have?",
+            name: "license",
+        },
+        {
+            type:"input",
+            message: "Please provide a link to a screenshot or gif of your project",
+            name: "demo",
         }
     ]);
 };
-
+//After user input has been gathered, we are passing the values into the README template
 const generateReadme = ({
     title,
     description,
@@ -60,14 +70,18 @@ const generateReadme = ({
     report,
     contribute,
     email,
-    github
+    github,
+    license,
+    demo,
 }) => `
 
 # ${title}
 
+![GitHub license](https://img.shields.io/badge/License-${license}-yellow.svg)
+
 ## Description
 
-* ${description}
+- ${description}
 
 ### Table of Contents  
 [Technologies used](#technologies)
@@ -80,36 +94,43 @@ const generateReadme = ({
 
 [How to Contribute](#Contribute)
 
+[Demo](#Demo)
+
+##Product Demo:
+
+![${demo}](${demo})
+
 
 ## Technologies Used:
 
-* ${technologies}
+- ${technologies}
 
 ## How-to-use:
 
-* ${howToUse}
+- ${howToUse}
 
 ## How-to-install:
 
-* ${howToInstall}
+- To install the necessary depenencies, run the following command in the integrated terminal ${howToInstall}
 
 ## Report-issues:
 
-* ${email}
-* ${github}
+* [${email}](${email})
+* [${github}](${github})
 * ${report}
 
 ## Contribute:
 
-* ${contribute}
+* The way you can contribute to this repo is to ${contribute}
 `
-
+//Running this function at the start, first the questions will be populated using inquirer, then writes a new file using file system. We are catching any errors with the .catch method
 const init = () => {
     questions()
-    .then((userInput) => fs.writeFileSync(`${userInput.title}.md`, generateReadme(userInput)))
-    .then(() => console.log('generated readme'))
+    .then((userInput) => fs.writeFileSync(`README.md`, generateReadme(userInput)))
+    .then(() => console.log('Generating README........'))
     .catch((err) => {
         throw err
     })
-}
+};
+
 init();
