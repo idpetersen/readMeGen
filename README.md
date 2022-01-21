@@ -9,7 +9,7 @@
 ### Table of Contents  
 [Technologies used](#technologies)
 
-[How to use](#How-to-use)
+[How to use](#Usage)
 
 [How to install](#How-to-install)
 
@@ -24,7 +24,7 @@
 
 - node.JS, JavaScript, FileSystem (FS), and Inquirer
 
-## How-to-use:
+## Usage:
 
 - Clone the repo to your local machine. Open in your terminal (with node installed) and run the command: npm install, then in the terminal run the command node index.js, answer the questions provided and a README should be generated
 

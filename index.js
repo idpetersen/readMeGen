@@ -57,7 +57,12 @@ const questions = () => {
             type:"input",
             message: "Please provide a link to a screenshot or gif of your project",
             name: "demo",
-        }
+        },
+        {
+            type: "input",
+            message: "Who would you like to give credit to?",
+            name: "credit",
+        },
     ]);
 };
 //After user input has been gathered, we are passing the values into the README template
@@ -73,6 +78,7 @@ const generateReadme = ({
     github,
     license,
     demo,
+    credit,
 }) => `
 
 # ${title}
@@ -86,7 +92,7 @@ const generateReadme = ({
 #### Table of Contents  
 [Technologies used](#technologies)
 
-[How to use](#How-to-use)
+[How to use](#Usage)
 
 [How to install](#How-to-install)
 
@@ -100,17 +106,21 @@ const generateReadme = ({
 
 - ${technologies}
 
-## How-to-use:
+## Usage:
 
 - ${howToUse}
+
+## Demo
+
+![${demo}](${demo})
 
 ## How-to-install:
 
 - To install the necessary depenencies, run the following command in the integrated terminal ${howToInstall}
 
-## Demo
+## Credits:
 
-![${demo}](${demo})
+- I would like to give credit to ${credit}
 
 ## Report-issues:
 
