@@ -23,33 +23,15 @@
 ## How-to-use:
 
 * ${response.howToUse}
-##### Table of Contents
-##### Table of Contents  
-##### Table of Contents  
-##### Table of Contents  
-##### Table of Contents  
-##### Table of Contents  
-##### Table of Contents  
-##### Table of Contents  
-##### Table of Contents  
-##### Table of Contents  
-v
-v
-##### Table of Contents  
-v
-v
-v
-v
-v
-v
-
 
 ## How-to-install:
 
-* ${response.how-to-install}
+* ${response.howToInstall}
 
 ## Report-issues:
 
+* ${response.email}
+* ${response.github}
 * ${response.report}
 
 ## Contribute:
