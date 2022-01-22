@@ -38,7 +38,7 @@
 
 ## Report-issues:
 
-* [isaac.petersen5@gmail.com](isaac.petersen5@gmail.com)
+* [isaac.petersen5@gmail.com](mailto:isaac.petersen5@gmail.com)
 * [https://github.com/idpetersen](https://github.com/idpetersen)
 * You can either email me with the provided email address or contact me on GitHub
 
