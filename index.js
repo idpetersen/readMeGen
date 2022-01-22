@@ -124,7 +124,7 @@ const generateReadme = ({
 
 ## Report-issues:
 
-* [${email}](${email})
+* [${email}](mailto:${email})
 * [${github}](https://github.com/${github})
 * ${report}
 
