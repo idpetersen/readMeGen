@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 //Setting a variable to collect user data using inquirer
+
 const questions = () => {
     return inquirer.prompt([{
             type: "input",
@@ -49,8 +50,9 @@ const questions = () => {
             name: "github"
         },
         {
-            type: "input",
+            type: "list",
             message: "What kind of license should your project have?",
+            choices: ["MIT","Apache_2.0", "Mozilla_Public_2.0", "BSD_3-Clause", "BSD_2-Clause", "GNU_v2"],
             name: "license",
         },
         {
