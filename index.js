@@ -137,7 +137,7 @@ const generateReadme = ({
 //Running this function at the start, first the questions will be populated using inquirer, then writes a new file using file system. We are catching any errors with the .catch method
 const init = () => {
     questions()
-    .then((userInput) => fs.writeFileSync(`README.md`, generateReadme(userInput)))
+    .then((userInput) => fs.writeFileSync(`READM.md`, generateReadme(userInput)))
     .then(() => console.log('Generating README........'))
     .catch((err) => {
         throw err
